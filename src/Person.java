@@ -1,3 +1,6 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Person {
     protected String email;
     protected String idCard;
@@ -27,7 +30,16 @@ public class Person {
     }
 
     public void setIdCard(String idCard) {
-        this.idCard = idCard;
+        Pattern p = Pattern.compile("^[0-9]{8}[A-Z]{1}$",
+                Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(idCard);
+        boolean matchFound = m.find();
+        if(matchFound){
+            this.idCard = idCard;
+        }
+        else{
+            this.idCard = "";
+        }
     }
 
     @Override
