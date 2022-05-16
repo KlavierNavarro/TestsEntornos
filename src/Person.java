@@ -22,7 +22,16 @@ public class Person {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Pattern p = Pattern.compile("^\\w+(\\.\\w+)*@\\w+(\\.\\w+)+$",
+                Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(email);
+        boolean matchFound = m.find();
+        if(matchFound){
+            this.email = email;
+        }
+        else{
+            this.email = "";
+        }
     }
 
     public String getIdCard() {
