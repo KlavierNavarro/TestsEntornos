@@ -39,16 +39,22 @@ public class Person {
     }
 
     public void setIdCard(String idCard) {
-        Pattern p = Pattern.compile("^[0-9]{8}[A-Z]{1}$",
-                Pattern.CASE_INSENSITIVE);
-        Matcher m = p.matcher(idCard);
-        boolean matchFound = m.find();
-        if(matchFound){
-            this.idCard = idCard;
+        if(idCard == null){
+             this.idCard = "";
         }
         else{
-            this.idCard = "";
+            Pattern p = Pattern.compile("^[0-9]{8}[A-Z]{1}$",
+                    Pattern.CASE_INSENSITIVE);
+            Matcher m = p.matcher(idCard);
+            boolean matchFound = m.find();
+            if(matchFound){
+                this.idCard = idCard;
+            }
+            else{
+                this.idCard = "";
+            }
         }
+
     }
 
     @Override
