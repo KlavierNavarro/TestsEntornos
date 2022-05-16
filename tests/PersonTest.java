@@ -8,13 +8,16 @@ class PersonTest {
 
     @BeforeEach
     void setUp() {
+        Person p = new Person();
     }
 
     @Test
     void setEmail() {
+
     }
 
     @Test
     void setIdCard() {
+
     }
 }
