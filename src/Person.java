@@ -26,7 +26,7 @@ public class Person {
                 Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(email);
         boolean matchFound = m.find();
-        if(matchFound){
+        if(matchFound && email != null){
             this.email = email;
         }
         else{

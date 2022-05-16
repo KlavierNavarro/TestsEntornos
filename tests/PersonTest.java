@@ -32,6 +32,21 @@ class PersonTest {
 
     @Test
     void setIdCard() {
+        p.setIdCard("12345678A");
+        assertEquals("12345678A", p.getIdCard());
+
+        p.setIdCard("");
+        assertEquals("", p.getIdCard());
+
+        p.setIdCard("12345678");
+        assertEquals("", p.getIdCard());
+
+        p.setIdCard("12345678");
+        assertEquals("", p.getIdCard());
+
+        p.setIdCard(null);
+        assertEquals("", p.getIdCard());
+
 
     }
 }
